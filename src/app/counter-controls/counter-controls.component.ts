@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { Store } from '@ngrx/store';
-import { IncrementAction } from '../store/counter.actions';
+import { increment } from '../store/counter.actions';
 
 
 @Component({
@@ -13,8 +13,8 @@ export class CounterControlsComponent {
 
   increment() {
     // 從Component dispatch action，這樣NgRx就可以幫我們調用這些reducer
-    // this.store.dispatch(increment({add: 5}));
-    this.store.dispatch(new IncrementAction(5));
+    this.store.dispatch(increment({add: 5}));
+    // this.store.dispatch(new IncrementAction(5));
   }
 
   decrement() {
