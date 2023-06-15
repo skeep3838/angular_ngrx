@@ -1,5 +1,5 @@
 import { createReducer, on } from "@ngrx/store";
-import { increment } from "./counter.actions";
+import { decrement, increment } from "./counter.actions";
 
 // 此參數可以是任何形式，數字 字串 陣列 物件 
 const initialState = 0;
@@ -11,7 +11,8 @@ export const counterReducer = createReducer(
     // 需要做的不是更改目前的狀態，而是返回一個新的值
     // NgRx將會自動儲存該reducer管理數據的新狀態值
     // (state, action) state: 當前的狀態, action: 取得action相關資訊，type或參數
-    on(increment, (state, action) => state + action.add)
+    on(increment, (state, action) => state + action.add),
+    on(decrement, (state, action) => state - action.value)
 );
 
 // // 較新的Angular版本才能直接這樣設定
