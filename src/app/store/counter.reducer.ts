@@ -10,7 +10,8 @@ export const counterReducer = createReducer(
     // 第二個參數: 當action發生時，將由NgRx執行此函數，將函數自動接收當作的狀態當作輸入
     // 需要做的不是更改目前的狀態，而是返回一個新的值
     // NgRx將會自動儲存該reducer管理數據的新狀態值
-    on(increment, (state) => state + 1)
+    // (state, action) state: 當前的狀態, action: 取得action相關資訊，type或參數
+    on(increment, (state, action) => state + action.add)
 );
 
 // 較新的Angular版本才能直接這樣設定

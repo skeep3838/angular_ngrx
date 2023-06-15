@@ -13,7 +13,7 @@ export class CounterControlsComponent {
 
   increment() {
     // 從Component dispatch action，這樣NgRx就可以幫我們調用這些reducer
-    this.store.dispatch(increment());
+    this.store.dispatch(increment({add: 5}));
   }
 
   decrement() {
