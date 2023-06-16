@@ -11,7 +11,7 @@ export const counterReducer = createReducer(
     // 需要做的不是更改目前的狀態，而是返回一個新的值
     // NgRx將會自動儲存該reducer管理數據的新狀態值
     // (state, action) state: 當前的狀態, action: 取得action相關資訊，type或參數
-    on(increment, (state, action) => state + action.add),
+    on(increment, (state, action) => state + action.value),
     on(decrement, (state, action) => state - action.value),
     on(reset, () => 0)
 );

@@ -10,7 +10,7 @@ export const increment = createAction(
     // Action return的東西的東西，存在這裡的Increment中，一個有return的函數
     INCERMENT,
     // props是一個通用函數，用來描述action可以附加的資料類型
-    props<{ add: number }>()
+    props<{ value: number }>()
 );
 
 export const decrement = createAction(
