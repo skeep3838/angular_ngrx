@@ -2,7 +2,18 @@ import { createAction, props } from "@ngrx/store";
 
 export const INCERMENT = '[Counter] Increment';
 export const DECERMENT = '[Counter] Decrement';
+export const INIT = '[Counter] Init';
+export const SET = '[Counter] Set';
 export const RESET = '[Counter] Reset';
+
+export const init = createAction(
+    INIT
+);
+
+export const set = createAction(
+    SET,
+    props<{ value: number }>()
+);
 
 export const increment = createAction(
     // [此操作所屬的功能名稱] 必須是唯一的標示符
